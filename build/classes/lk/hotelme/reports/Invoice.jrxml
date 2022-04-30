@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="792" pageHeight="550" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cd4e87fc-5cbf-4dce-89d7-f65d13aa1b21">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="hotelDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="CheckinDate" class="java.lang.String"/>
+	<parameter name="CheckoutDate" class="java.lang.String"/>
+	<parameter name="RoomPrice" class="java.lang.Double"/>
+	<parameter name="PackageName" class="java.lang.String"/>
+	<parameter name="MealName" class="java.lang.String"/>
+	<parameter name="MealPrice" class="java.lang.Double"/>
+	<parameter name="TotalPrice" class="java.lang.Double"/>
+	<parameter name="ValuePaid" class="java.lang.Double"/>
+	<parameter name="RemainingValue" class="java.lang.Double"/>
+	<parameter name="ReceptionistID" class="java.lang.String"/>
+	<parameter name="ReceptionistName" class="java.lang.String"/>
+	<parameter name="ReservationID" class="java.lang.String"/>
+	<parameter name="PaymentID" class="java.lang.String"/>
+	<parameter name="CustomerID" class="java.lang.String"/>
+	<parameter name="CustomerName" class="java.lang.String"/>
+	<parameter name="RoomNo" class="java.lang.String"/>
+	<parameter name="Floor" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Reservation,Payment_Detail,Payment]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<staticText>
+				<reportElement x="290" y="0" width="190" height="30" uuid="f9cb03fb-d89b-42d6-b0d2-fa822793ccc9"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Booking Receipt]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="110" y="-1" width="100" height="30" uuid="4b8cef7a-5e42-47d5-8e4a-008aa9fc20d2"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="-1" width="100" height="30" uuid="9af179e8-fd9a-4801-9aca-5889b52e45ac"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Date     :]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="110" y="40" width="100" height="30" uuid="3968cb4f-0e6e-450c-b8bc-75da4f7a850a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="100" height="30" uuid="631ff320-aa7a-4bfd-aa04-b7b03ca0e47d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Time    :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="635" y="0" width="100" height="30" uuid="63861829-96d6-4677-95e2-f938a8eafa9a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReceptionistID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="635" y="40" width="115" height="30" uuid="03403cb7-d48d-4386-a117-91474a736405"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReceptionistName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="635" y="80" width="100" height="30" uuid="5fa3946e-0d6c-44bf-a4ea-a9f9bc13928f"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CustomerID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="70" width="100" height="30" uuid="33bb077f-2a0a-4201-8b5a-a44b343d4473"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ReservationID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="70" width="100" height="30" uuid="ee04bd8f-dc3c-46b9-8fb3-2f0914964adc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Reservation ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="0" width="100" height="30" uuid="d12d4872-87ef-4130-b641-2625e32d3572"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Receptionist ID:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="40" width="100" height="30" uuid="88c44334-c26c-49a7-9b2f-216a9370b9d6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Receptionist :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="525" y="80" width="100" height="30" uuid="146d286b-f173-4d6e-a702-d5bd9247395e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Customer ID:]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="308" splitType="Stretch">
+			<textField>
+				<reportElement x="390" y="8" width="120" height="30" uuid="bdc620e3-8844-484a-b1ee-efc29a747221"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CheckinDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="630" y="7" width="120" height="30" uuid="bcbc3795-6549-49b5-b094-87358f621afc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CheckoutDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="8" width="130" height="30" uuid="a28b4cc2-ee78-4625-9816-aaf7b8d7f4ed"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CustomerName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="8" width="100" height="30" uuid="ecf7d389-698b-4544-aa76-114f48f6a5d5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="8" width="100" height="30" uuid="78d0bffa-2b03-42c6-993a-f2f4ee33e70a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Check IN   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="520" y="9" width="100" height="30" uuid="4bdd7c17-6772-4e86-b8f6-d37faec312fe"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Check Out    :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="140" y="90" width="160" height="30" uuid="228278f7-1b45-4b5e-b024-d08df36f1fc8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PackageName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="220" height="30" uuid="1f0bcd90-0953-44bf-a3b8-92d7e0e23d04"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Room / Package Information]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="141" y="130" width="130" height="30" uuid="54501d65-530f-4617-857d-80aa74d83c36"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RoomNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="87" width="100" height="30" uuid="61f8675e-9dbd-4f25-91a2-7bf372b2c2da"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Floor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="127" width="100" height="30" uuid="1c87252f-118c-450c-a6d1-e1928aa63eb3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RoomPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="90" width="100" height="30" uuid="f6c2475f-992d-4539-9bcd-f021d2c98eae"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Package Name  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="128" width="100" height="30" uuid="1ef1a38e-f806-4db4-8893-bd0aa77445e7"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Room No  : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="87" width="100" height="30" uuid="a3d91e04-11b5-4f80-8719-9471ca42723e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Room Floor  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="127" width="100" height="30" uuid="09680690-f174-41d4-96f9-ad372bbee73e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Room Price  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="638" y="124" width="100" height="30" uuid="d8e7cb6e-7368-4e56-8731-247002aaead2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MealPrice}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="638" y="87" width="100" height="30" uuid="cdb5014c-c5b3-40ec-a080-4b30a5fafd6a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{MealName}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="538" y="87" width="100" height="30" uuid="b132941b-e340-4165-a644-852f28373724"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Meal Name :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="538" y="120" width="100" height="30" uuid="f40e415b-b26f-4e7c-ac1a-b47023c1519d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Meal Price :]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="48" width="760" height="2" uuid="5296383a-0c15-4ad6-adc6-490af7ac540d"/>
+			</line>
+			<line>
+				<reportElement x="-2" y="-3" width="760" height="2" uuid="2c0a8987-07ed-419a-a4da-c774a452896c"/>
+			</line>
+			<line>
+				<reportElement x="5" y="162" width="760" height="2" uuid="f3612c1c-1f33-438e-8bca-a074bdbfaf19"/>
+			</line>
+			<staticText>
+				<reportElement x="8" y="170" width="220" height="30" uuid="839e7bec-ffa8-4190-a25b-e45a36c0d494"/>
+				<textElement textAlignment="Left">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Payment Information]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="610" y="170" width="140" height="30" uuid="8dbbe3d6-c155-4c9d-8aac-ca346d6659a4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{PaymentID}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="500" y="170" width="100" height="30" uuid="7e73f800-3dd7-46e0-bcf4-06a5e4d1034c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Payment ID :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="361" y="211" width="110" height="30" uuid="89d822f7-d88f-45ab-abd8-b3c6878d4ec2"/>
+				<textElement textAlignment="Right">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TotalPrice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="197" y="216" width="100" height="23" uuid="9cb09391-b815-46f3-92f0-b0c58d3d9066"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Total Payment : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="214" width="50" height="20" uuid="44bd8d3d-66af-4975-9048-9a146d135e2e"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[LKR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="475" y="211" width="50" height="25" uuid="eee62ad4-4462-48ca-9831-a26b7f842aa0"/>
+				<textElement textAlignment="Left">
+					<font size="18"/>
+				</textElement>
+				<text><![CDATA[/=]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="19" y="263" width="90" height="23" uuid="a1d8fbb8-71a8-4b62-9eff-6f3038e67d8d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Value Paid  :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="260" width="118" height="23" uuid="1445358c-cf05-4480-8ece-b2f2a799f06d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Remaining Value  :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="262" width="100" height="30" uuid="b714f0a1-b98b-483f-8755-a662d768f28a"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ValuePaid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="619" y="257" width="100" height="30" uuid="4a493cd9-2d97-4f2e-8129-cef0658c938d"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RemainingValue}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="114" y="262" width="30" height="20" uuid="d00154b0-ff05-4cf9-8bd5-9d0e52ed4e27"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[LKR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="583" y="257" width="30" height="20" uuid="52fcb1b4-b00e-4995-81cf-26bf35d484bf"/>
+				<textElement textAlignment="Right">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[LKR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="294" width="760" height="2" uuid="ad125d98-8770-4704-ba9e-d66e2f0f59f3"/>
+			</line>
+		</band>
+	</detail>
+	<summary>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="210" y="8" width="380" height="30" uuid="69323f17-f868-42bf-b75d-b2c2312d2838"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[**Please keep this Document Safe**]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

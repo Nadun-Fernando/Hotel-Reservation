@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="paneCustomer" prefHeight="678.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.hotelme.controller.CustomerFormController">
+   <children>
+      <JFXTextField fx:id="txtCustomerID" labelFloat="true" layoutX="22.0" layoutY="112.0" prefHeight="26.0" prefWidth="329.0" promptText="Customer_ID" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="21.0" layoutY="8.0" prefHeight="46.0" prefWidth="330.0" text="Customer Registration">
+         <font>
+            <Font name="Broadway" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtCustomerFirstName" labelFloat="true" layoutX="413.0" layoutY="112.0" prefHeight="26.0" prefWidth="329.0" promptText="First Name" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCustomerLastName" labelFloat="true" layoutX="813.0" layoutY="111.0" prefHeight="26.0" prefWidth="329.0" promptText="Last Name" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="22.0" layoutY="204.0" prefHeight="28.0" prefWidth="329.0" promptText="Address" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtCountry" labelFloat="true" layoutX="413.0" layoutY="204.0" prefHeight="28.0" prefWidth="329.0" promptText="Country" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtTelephoneNumber" labelFloat="true" layoutX="22.0" layoutY="297.0" prefHeight="28.0" prefWidth="329.0" promptText="Contact Number" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtEmail" labelFloat="true" layoutX="413.0" layoutY="297.0" prefHeight="28.0" prefWidth="329.0" promptText="Email (Optional)" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <TableView fx:id="tblCustomerInfo" layoutX="27.0" layoutY="339.0" onMouseClicked="#tblCustomerInfoMouseClicked" prefHeight="327.0" prefWidth="1120.0">
+         <columns>
+            <TableColumn prefWidth="104.80003356933594" text="ID" />
+            <TableColumn prefWidth="250.4000244140625" text="Name" />
+            <TableColumn prefWidth="341.59991455078125" text="Address" />
+            <TableColumn prefWidth="223.99993896484375" text="Contact Number" />
+            <TableColumn prefWidth="239.20013427734375" text="Email" />
+         </columns>
+      </TableView>
+      <JFXButton fx:id="btnSaveCustomer" buttonType="RAISED" layoutX="917.0" layoutY="166.0" onAction="#btnSaveAction" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #33ccff;" text="Save" />
+      <Separator layoutX="813.0" layoutY="153.0" orientation="VERTICAL" prefHeight="182.0" prefWidth="12.0" />
+      <JFXButton fx:id="btnUpdateCustomer" buttonType="RAISED" layoutX="917.0" layoutY="206.0" onAction="#btnUpdateAction" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #ff99c2;" text="Update " />
+      <JFXButton fx:id="btnDeleteCustomer" buttonType="RAISED" layoutX="918.0" layoutY="249.0" onAction="#btnDeleteAction" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #80ffe5;" text="Delete" />
+      <JFXButton fx:id="btnReloadCustomer" buttonType="RAISED" layoutX="918.0" layoutY="291.0" onAction="#btnReloadAction" prefHeight="25.0" prefWidth="146.0" style="-fx-background-color: #e699ff;" text="Reload " />
+      <TextField fx:id="txtSearchbyID" layoutX="945.0" layoutY="31.0" onAction="#searchbyIDAction" prefHeight="25.0" prefWidth="182.0" promptText="Search by Customer_ID" />
+      <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="1100.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8-search-64.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

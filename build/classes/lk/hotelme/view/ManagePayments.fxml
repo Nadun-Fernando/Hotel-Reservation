@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="managePaymentPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.hotelme.controller.ManagePaymentsController">
+   <children>
+      <TableView fx:id="tblmanagePayments" layoutX="18.0" layoutY="360.0" onMouseClicked="#tblPanagePaymentsMouseClicked" prefHeight="302.0" prefWidth="912.0">
+        <columns>
+          <TableColumn prefWidth="107.19997787475586" text="Payment_ID" />
+          <TableColumn prefWidth="127.20002746582031" text="Customer_ID" />
+            <TableColumn prefWidth="244.79998779296875" text="Total_Amount" />
+            <TableColumn prefWidth="215.20001220703125" text="Paid Amount" />
+            <TableColumn prefWidth="220.0" text="Remaining Amount" />
+        </columns>
+      </TableView>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="948.0" style="-fx-background-color: #33ccff; -fx-text-fill: White;" text="Room Reservation - Manage Payments">
+         <font>
+            <Font name="Bodoni MT Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtSearchbyCusID" layoutX="582.0" layoutY="75.0" prefHeight="26.0" prefWidth="225.0" promptText="Search by Customer_ID" />
+      <JFXButton fx:id="btnSearchbyCustomerID" buttonType="RAISED" layoutX="822.0" layoutY="73.0" onAction="#btnSearchbyCustomerIDActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #ffbb99; -fx-background-radius: 10;" text="SEARCH" />
+      <TextField fx:id="txtSearchbyPaymentID" layoutX="54.0" layoutY="75.0" prefHeight="26.0" prefWidth="225.0" promptText="Search by Payment_ID" />
+      <JFXButton fx:id="btnSearchbyPaymentID" buttonType="RAISED" layoutX="302.0" layoutY="73.0" onAction="#btnSearchbyPaymentIDActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #ffbb99; -fx-background-radius: 10;" text="SEARCH" />
+      <Separator layoutY="118.0" prefHeight="0.0" prefWidth="948.0" />
+      <Label fx:id="lblPAymentID" layoutX="696.0" layoutY="142.0" prefHeight="30.0" prefWidth="210.0" style="-fx-background-color: grey; -fx-text-fill: White;">
+         <font>
+            <Font name="Britannic Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblCustomerID" layoutX="175.0" layoutY="142.0" prefHeight="30.0" prefWidth="209.0" style="-fx-background-color: grey; -fx-text-fill: White;">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalAmount" layoutX="175.0" layoutY="201.0" prefHeight="30.0" prefWidth="210.0" style="-fx-background-color: grey; -fx-text-fill: White;">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="142.0" prefHeight="30.0" prefWidth="118.0" text="Customer ID">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="545.0" layoutY="142.0" prefHeight="30.0" prefWidth="118.0" text="Payment_ID">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="201.0" prefHeight="30.0" prefWidth="118.0" text="Total Amount">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAmountPaid" layoutX="696.0" layoutY="201.0" prefHeight="30.0" prefWidth="210.0" style="-fx-background-color: grey; -fx-text-fill: White;">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="545.0" layoutY="201.0" prefHeight="30.0" prefWidth="118.0" text="Amount_Paid">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRemainigAmount" layoutX="445.0" layoutY="265.0" prefHeight="30.0" prefWidth="217.0" style="-fx-background-color: grey; -fx-text-fill: White;">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="280.0" layoutY="265.0" prefHeight="30.0" prefWidth="136.0" text="Remaining Amount">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="144.0" layoutY="201.0" prefHeight="30.0" prefWidth="30.0" text="LKR">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="265.0" prefHeight="30.0" prefWidth="30.0" text="LKR">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="665.0" layoutY="201.0" prefHeight="30.0" prefWidth="30.0" text="LKR">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSettlePayment" buttonType="RAISED" layoutX="272.0" layoutY="308.0" onAction="#btnSettlePaymentActionPerformed" prefHeight="39.0" prefWidth="462.0" style="-fx-background-color: #33ccff; -fx-background-radius: 12; -fx-text-fill: white;" text="Settle Payment">
+         <font>
+            <Font name="SansSerif Bold" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

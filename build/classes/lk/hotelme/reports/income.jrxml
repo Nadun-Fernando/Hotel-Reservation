@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="income" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6196f63-447d-4bcb-a307-bfc89fa67ab8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="hotelDB"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Start_Date" class="java.lang.String"/>
+	<parameter name="End_Date" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select Payment_Date, SUM(Amount_Paid) from Payment_Detail where Payment_Date between $P{Start_Date} and $P{End_Date} group by Payment_Detail.Payment_Date
+ ]]>
+	</queryString>
+	<field name="Payment_Date" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="Payment_Date"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="payment_detail"/>
+	</field>
+	<field name="SUM(Amount_Paid)" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="SUM(Amount_Paid)"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="20" width="330" height="36" uuid="49650188-3451-49b2-af32-08023731b773"/>
+				<textElement textAlignment="Center">
+					<font size="19" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Monthly Report - INCOME]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50">
+			<staticText>
+				<reportElement x="288" y="15" width="260" height="30" uuid="2922c353-9869-4e23-a2a4-30e46a95ad82"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Received Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="5" y="15" width="260" height="30" uuid="24039d6a-be06-4f9a-97df-6f86e8ec6c0c"/>
+				<textElement textAlignment="Center">
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Payment Date]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47">
+			<textField>
+				<reportElement x="111" y="8" width="58" height="30" uuid="3c264949-8f0a-42de-a85a-00309e180a26"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Payment_Date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="278" y="8" width="269" height="30" uuid="18b499c1-2077-41ae-a527-b8524267f279"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SUM(Amount_Paid)}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

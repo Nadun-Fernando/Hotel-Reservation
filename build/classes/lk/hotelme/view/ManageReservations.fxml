@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="manageReservationsPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="1169.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.hotelme.controller.ManageReservationsController">
+   <children>
+      <Label alignment="CENTER" prefHeight="62.0" prefWidth="1169.0" style="-fx-background-color: #33ccff; -fx-text-fill: White;" text="Manage Reservations">
+         <font>
+            <Font name="Bodoni MT Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblManageReservations" layoutX="14.0" layoutY="245.0" onMouseClicked="#tblanageReservationMouseClicked" prefHeight="340.0" prefWidth="1146.0">
+        <columns>
+          <TableColumn prefWidth="91.2000093460083" text="ReservationID" />
+          <TableColumn prefWidth="97.60000610351562" text="CustomerID" />
+            <TableColumn prefWidth="100.00001525878906" text="Guests" />
+            <TableColumn prefWidth="154.4000244140625" text="ArrivalDate" />
+            <TableColumn prefWidth="129.5999755859375" text="DepartureDate" />
+            <TableColumn prefWidth="111.20001220703125" text="PackageID" />
+            <TableColumn prefWidth="108.0" text="MealID" />
+            <TableColumn prefWidth="112.0" text="RoomID" />
+            <TableColumn prefWidth="113.599853515625" text="ReceptionistID" />
+            <TableColumn prefWidth="128.79998779296875" text="PaymentID" />
+        </columns>
+      </TableView>
+      <JFXDatePicker fx:id="arrivaldate" layoutX="468.0" layoutY="130.0" />
+      <JFXDatePicker fx:id="departuredate" layoutX="873.0" layoutY="130.0" />
+      <Label fx:id="lblReservationID" layoutX="124.0" layoutY="129.0" prefHeight="30.0" prefWidth="159.0" style="-fx-background-color: grey; -fx-text-fill: white;">
+         <font>
+            <Font name="Britannic Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text layoutX="357.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival Date" wrappingWidth="87.20005026617741">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="22.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reservation ID" wrappingWidth="98.40000143805241">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="730.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure Date" wrappingWidth="114.40006247320866">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="1044.0" layoutY="211.0" onAction="#btnDeleteActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #80ffe5; -fx-background-radius: 10;" text="DELETE" />
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="363.0" layoutY="194.0" onAction="#btnUpdateActionPerformed" prefHeight="42.0" prefWidth="410.0" style="-fx-background-color: #ff99c2; -fx-background-radius: 10;" text="UPDATE" />
+      <TextField fx:id="txtSearchbyID" layoutX="401.0" layoutY="71.0" prefHeight="26.0" prefWidth="225.0" promptText="Search by Type_ID" />
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="645.0" layoutY="70.0" onAction="#btnSearchActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #ffbb99; -fx-background-radius: 10;" text="SEARCH" />
+      <Separator layoutY="116.0" prefHeight="0.0" prefWidth="1170.0" />
+   </children>
+</AnchorPane>

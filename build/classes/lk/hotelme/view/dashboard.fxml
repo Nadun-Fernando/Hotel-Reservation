@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashboardpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.hotelme.controller.DashboardController">
+   <children>
+      <Pane fx:id="navigationpane" layoutX="-3.0" layoutY="90.0" prefHeight="678.0" prefWidth="203.0">
+         <children>
+            <ImageView fitHeight="678.0" fitWidth="203.0" layoutX="2.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../image/navigation.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnaddPackage" layoutX="2.0" layoutY="35.0" onAction="#btnPackageAction" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="ADD PACKAGE">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnAddRoomType" layoutY="132.0" onAction="#btnAddRoomTypeActionPerformed" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="ADD ROOM TYPE">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnAddRoom" layoutY="229.0" onAction="#btnAddRoomActionPerformed" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="ADD ROOM">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="btnAddCustomer" layoutY="326.0" onAction="#btnAddCustomerActionPerformed" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="ADD CUSTOMER">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font></JFXButton>
+            <Separator layoutX="1.0" layoutY="223.0" prefWidth="200.0" />
+            <Separator layoutX="1.0" layoutY="125.0" prefWidth="200.0" />
+            <Separator layoutX="1.0" layoutY="320.0" prefWidth="200.0" />
+            <JFXButton fx:id="btnAddReceptionist" layoutX="2.0" layoutY="426.0" onAction="#btnAddReceptionistActionPerformed" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="ADD RECEPTIONIST">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="3.0" layoutY="419.0" prefWidth="200.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="headerpane" prefHeight="91.0" prefWidth="1366.0">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="1366.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../image/header.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="91.0" fitWidth="203.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../image/HotelLogo.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="btnReservation" layoutX="1155.0" layoutY="3.0" onAction="#btnReservationActionPerformed" prefHeight="83.0" prefWidth="203.0" style="-fx-text-fill: white; -fx-background-color: rgba(170,170,170,0.5);" text="RESERVATION">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font>
+            </JFXButton>
+            <Separator layoutX="1142.0" layoutY="5.0" orientation="VERTICAL" prefHeight="73.0" prefWidth="0.0" />
+            <Label alignment="CENTER" layoutX="247.0" layoutY="14.0" prefHeight="62.0" prefWidth="857.0" text="WELCOME TO HOTEL ME - COLOMBO &#10;" textFill="#11dd51">
+               <font>
+                  <Font name="Colonna MT" size="41.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="loadingpane" layoutX="200.0" layoutY="91.0" prefHeight="678.0" prefWidth="1166.0" />
+   </children>
+</AnchorPane>

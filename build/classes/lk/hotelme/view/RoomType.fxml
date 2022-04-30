@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="RoomTypePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1166.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.hotelme.controller.RoomTypeController">
+   <children>
+      <Label layoutX="14.0" layoutY="8.0" prefHeight="46.0" prefWidth="330.0" text="Room Type Management">
+         <font>
+            <Font name="Broadway" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtRoomTypeID" labelFloat="true" layoutX="53.0" layoutY="99.0" prefHeight="28.0" prefWidth="291.0" promptText="Room_Type ID" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtRoomTypeName" labelFloat="true" layoutX="481.0" layoutY="99.0" prefHeight="28.0" prefWidth="401.0" promptText="Room_Type Name" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtMaxGuests" labelFloat="true" layoutX="53.0" layoutY="207.0" prefHeight="28.0" prefWidth="291.0" promptText="Max_Guests" style="-fx-text-fill: black;">
+         <font>
+            <Font name="Footlight MT Light" size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAddRoom" buttonType="RAISED" layoutX="71.0" layoutY="275.0" onAction="#btnAddRoomActionPerformed" prefHeight="46.0" prefWidth="697.0" style="-fx-background-color: #33ccff; -fx-background-radius: 12; -fx-text-fill: white;" text="Add Room Type">
+         <font>
+            <Font name="SansSerif Bold" size="20.0" />
+         </font>
+      </JFXButton>
+      <TableView fx:id="tblRoomTypeManagement" layoutX="36.0" layoutY="339.0" onMouseClicked="#tblRoomTypeMouseClicked" prefHeight="324.0" prefWidth="960.0">
+        <columns>
+          <TableColumn prefWidth="150.39995956420898" text="Type_ID" />
+          <TableColumn prefWidth="602.3999786376953" text="Type_Name" />
+            <TableColumn prefWidth="205.60003662109375" text="Max_Guests" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnDelete" buttonType="RAISED" layoutX="1025.0" layoutY="397.0" onAction="#btnDeleteActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #80ffe5; -fx-background-radius: 10;" text="DELETE" />
+      <JFXButton fx:id="btnReload" buttonType="RAISED" layoutX="1025.0" layoutY="454.0" onAction="#btnReloadActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #e699ff; -fx-background-radius: 10;" text="RELOAD" />
+      <JFXButton fx:id="btnUpdate" buttonType="RAISED" layoutX="1025.0" layoutY="343.0" onAction="#btnUpdateActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #ff99c2; -fx-background-radius: 10;" text="UPDATE" />
+      <Separator layoutX="913.0" layoutY="45.0" orientation="VERTICAL" prefHeight="275.0" prefWidth="0.0" />
+      <TextField fx:id="txtSearchbyID" layoutX="932.0" layoutY="87.0" prefHeight="26.0" prefWidth="225.0" promptText="Search by Type_ID" />
+      <JFXButton fx:id="btnSearch" buttonType="RAISED" layoutX="989.0" layoutY="127.0" onAction="#btnSearchActionPerformed" prefHeight="26.0" prefWidth="111.0" style="-fx-background-color: #ffbb99; -fx-background-radius: 10;" text="SEARCH" />
+   </children>
+</AnchorPane>
